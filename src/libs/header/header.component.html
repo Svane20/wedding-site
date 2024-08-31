@@ -10,10 +10,10 @@
       <div class="nav">
         <ul>
           <li>
-            <a [routerLink]="['/']" [routerLinkActive]="" fragment="home">Hjem</a>
+            <a [routerLink]="['/']" fragment="home" [class.active]="isActive('home')">Hjem</a>
           </li>
           <li>
-            <a [routerLink]="['/']" fragment="couple">Parret</a>
+            <a [routerLink]="['/']" fragment="couple" [class.active]="isActive('couple')">Parret</a>
           </li>
           <li>
             <a [routerLink]="['/']">Historien</a>

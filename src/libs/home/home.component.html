@@ -1,6 +1,6 @@
 <section class="home-section" id="home">
   @for (slide of slides(); track slide.id; let i = $index) {
-    <div class="slide" [class.active]="i === currentSlideIndex()" [style.backgroundImage]="'url(' + slide.imageUrl + ')'">
+    <div class="slide" [ngClass]="{ active: i === currentSlideIndex() }" [ngStyle]="{ 'background-image': 'url(' + slide.imageUrl + ')' }">
       <div class="container">
         <div class="row align-items-center">
           <div class="home-content">
