@@ -1,8 +1,5 @@
 name: Angular GitHub CI/CD
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   build:
@@ -33,7 +30,7 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.TOKEN_GITHUB_ACTION }}
-          output-file: "false"
+          output-file: 'false'
 
       - name: Create Release
         uses: actions/create-release@v1
