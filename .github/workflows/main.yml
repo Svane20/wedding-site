@@ -1,0 +1,50 @@
+name: Angular GitHub CI/CD
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build:prod
+
+      - name: Move 3partylicenses.txt to browser folder
+        run: mv docs/wedding/3rdpartylicenses.txt dist/wedding/browser/3rdpartylicenses.txt
+
+      - name: Lint
+        run: |
+          npm run lint
+
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.TOKEN_GITHUB_ACTION }}
+          output-file: "false"
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB_ACTION }}
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
+
+      - name: Deploy
+        run: |
+          npm run deploy

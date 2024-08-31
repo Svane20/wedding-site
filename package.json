@@ -1,15 +1,19 @@
 {
-  "name": "wedding",
-  "version": "0.0.0",
+  "name": "@svane20/wedding-site",
+  "version": "1.0.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration=production --base-href=/wedding-site/",
+    "deploy": "ng deploy --base-href=/wedding-site/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^18.2.0",
     "@angular/common": "^18.2.0",
