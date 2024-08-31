@@ -80,6 +80,9 @@
 
   .nav {
     padding: 0 15px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease;
 
     ul {
       list-style: none;
@@ -109,8 +112,53 @@
         }
       }
     }
+
+    &.open {
+      height: 300px;
+    }
   }
 }
 
-.active {
+@media (min-width: 860px) {
+  .header .nav {
+    display: block !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 859px) {
+  .header {
+    .logo {
+      padding: 8px 15px;
+    }
+
+    .hamburger-btn {
+      display: flex;
+      margin-right: 15px;
+    }
+
+    .nav {
+      flex: 0 0 100%;
+      max-width: 100%;
+      background-color: #ffffff;
+
+      ul {
+        li {
+          display: block;
+          margin-left: 0;
+
+          a {
+            color: #555555;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+
+    &.fixed {
+      .nav {
+        border-top: 1px solid #cccccc;
+      }
+    }
+  }
 }

@@ -113,3 +113,9 @@
     transform: translateY(0px);
   }
 }
+
+@media (max-width: 859px) {
+  .home-section .home-content h1 {
+    font-size: 60px;
+  }
+}
