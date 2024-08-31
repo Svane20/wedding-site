@@ -13,7 +13,7 @@ import { NgClass } from '@angular/common';
 export class AudioPlayerComponent implements AfterViewInit {
   @ViewChild('audio') audioRef: ElementRef<HTMLAudioElement>;
 
-  public isPaused = signal<boolean>(false);
+  public isPaused = signal<boolean>(true);
 
   faMusic = faMusic;
 
