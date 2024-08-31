@@ -1,5 +1,4 @@
-name: Deploy Project to GitHub Pages
-
+name: CI/CD
 on: [push]
 
 jobs:
@@ -19,7 +18,5 @@ jobs:
       - name: Build
         run: npm run build:prod
 
-      - name: Deploy to GitHub Pages
-        env:
-          CI: true
-        run: npm run deploy
+      - name: Lint
+        run: npm run lint

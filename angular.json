@@ -124,11 +124,24 @@
             "baseHref": "/wedding-site/",
             "repo": "https://github.com/Svane20/wedding-site.git",
             "name": "Svane20",
-            "email": "svane.kasper20@gmail.com",
-            "dryRun": true
+            "email": "svane.kasper20@gmail.com"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
