@@ -22,6 +22,9 @@ jobs:
       - name: Build
         run: npm run build:prod
 
+      - name: Move 3partylicenses.txt to browser folder
+        run: mv dist/wedding/3rdpartylicenses.txt dist/wedding/browser/3rdpartylicenses.txt
+
       - name: Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
