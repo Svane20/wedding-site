@@ -120,7 +120,11 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "buildTarget": "wedding:build:production"
+            "buildTarget": "wedding:build:production",
+            "baseHref": "/wedding-site/",
+            "repo": "https://github.com/Svane20/wedding-site.git",
+            "name": "Svane20",
+            "email": "svane.kasper20@gmail.com"
           }
         }
       }

@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration=production",
-    "deploy": "ng deploy --base-href=/wedding-site/ --repo=https://github.com/Svane20/wedding-site.git",
+    "deploy": "ng deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
