@@ -6,11 +6,21 @@ import { AudioPlayerComponent } from '../../../libs/audio-player/audio-player.co
 import { StoryComponent } from '../../../libs/story/story.component';
 import { EventComponent } from '../../../libs/event/event.component';
 import { FooterComponent } from '../../../libs/footer/footer.component';
+import { PeopleComponent } from '../../../libs/people/people.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, HomeComponent, CoupleComponent, AudioPlayerComponent, StoryComponent, EventComponent, FooterComponent],
+  imports: [
+    HeaderComponent,
+    HomeComponent,
+    CoupleComponent,
+    AudioPlayerComponent,
+    StoryComponent,
+    EventComponent,
+    FooterComponent,
+    PeopleComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

@@ -1,0 +1,90 @@
+.people-section {
+  padding: 80px 0 0;
+
+  .people-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 15px;
+    margin-top: 25px;
+    display: block;
+    background-color: #3e99f4;
+
+    .people-item-inner {
+      background-color: #ffffff;
+      padding: 15px;
+      text-align: center;
+
+      img {
+        width: 100%;
+        box-shadow: 0 0 10px #cccccc;
+        margin-top: -40px;
+        transition: all 0.5s ease;
+
+        &:hover {
+          transform: scale(0.95);
+        }
+      }
+
+      h4 {
+        font-size: 16px;
+        color: #000000;
+        font-weight: 500;
+        margin: 20px 0 5px;
+        text-transform: capitalize;
+      }
+
+      p {
+        color: #555555;
+        font-size: 16px;
+        margin: 0 0 10px;
+        text-transform: capitalize;
+      }
+
+      .social-links {
+        text-align: center;
+        padding: 10px 0;
+
+        a {
+          display: inline-block;
+          margin: 0 3px;
+          text-decoration: none;
+
+          fa-icon {
+            height: 32px;
+            width: 32px;
+            border: 1px solid #3e99f4;
+            display: block;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+            color: #3e99f4;
+
+            &:hover {
+              color: #ffffff;
+              background-color: #3e99f4;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .people-section {
+    .people-item {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+}
+
+@media (max-width: 574px) {
+  .people-section {
+    .people-item {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
