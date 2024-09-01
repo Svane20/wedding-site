@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, signal } from '@angular/core';
-import { DatePipe, NgClass, NgStyle } from '@angular/common';
+import { DatePipe, formatDate, NgClass, NgStyle } from '@angular/common';
 
 interface Slide {
   id: number;
@@ -25,21 +25,21 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
       id: 1,
       title: 'Vi skal giftes',
       subTitle: 'Kasper & Mette',
-      date: new Date('9 Aug 2025'),
+      date: new Date('2025-08-09'),
       imageUrl: 'assets/images/slides/slide-1.jpg',
     },
     {
       id: 2,
       title: 'Vi skal giftes',
       subTitle: 'Kasper & Mette',
-      date: new Date('9 Aug 2025'),
+      date: new Date('2025-08-09'),
       imageUrl: 'assets/images/slides/slide-2.jpg',
     },
     {
       id: 3,
       title: 'Vi skal giftes',
       subTitle: 'Kasper & Mette',
-      date: new Date('9 Aug 2025'),
+      date: new Date('2025-08-09'),
       imageUrl: 'assets/images/slides/slide-3.jpg',
     },
   ]);
@@ -52,6 +52,17 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }
+  }
+
+  public capitalizeDate(date: Date): string {
+    const formattedDate = formatDate(date, 'd MMMM, y', 'da-DK');
+
+    const parts = formattedDate.split(' ');
+    if (parts.length > 1) {
+      parts[1] = parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
+    }
+
+    return parts.join(' ');
   }
 
   private startSlideShow(): void {

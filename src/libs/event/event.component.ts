@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { DatePipe, formatDate } from '@angular/common';
 
 interface Event {
   id: number;
@@ -46,4 +46,15 @@ export class EventComponent {
       location: 'Bystævnet 21, 5792 Årslev',
     },
   ]);
+
+  public capitalizeDate(date: Date): string {
+    const formattedDate = formatDate(date, 'd MMMM, y', 'da-DK');
+
+    const parts = formattedDate.split(' ');
+    if (parts.length > 1) {
+      parts[1] = parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
+    }
+
+    return parts.join(' ');
+  }
 }
