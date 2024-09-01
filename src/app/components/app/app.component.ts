@@ -5,7 +5,7 @@ import { CoupleComponent } from '../../../libs/couple/couple.component';
 import { AudioPlayerComponent } from '../../../libs/audio-player/audio-player.component';
 import { StoryComponent } from '../../../libs/story/story.component';
 import { EventComponent } from '../../../libs/event/event.component';
-import {FooterComponent} from "../../../libs/footer/footer.component";
+import { FooterComponent } from '../../../libs/footer/footer.component';
 
 @Component({
   selector: 'app-root',
