@@ -1,8 +1,12 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, LOCALE_ID, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withRouterConfig } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { registerLocaleData } from '@angular/common';
+import localeDa from '@angular/common/locales/da';
+
+registerLocaleData(localeDa);
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,5 +18,6 @@ export const appConfig: ApplicationConfig = {
       }),
     ),
     provideAnimationsAsync(),
+    { provide: LOCALE_ID, useValue: 'da-DK' },
   ],
 };
