@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, signal } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, signal } from '@angular/core';
 import { DatePipe, NgClass, NgStyle } from '@angular/common';
 
 interface Slide {
@@ -16,8 +16,9 @@ interface Slide {
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnDestroy {
   public currentSlideIndex = signal<number>(0);
+  public intervalId: any | null = null;
 
   public slides = signal<Slide[]>([
     {
@@ -43,15 +44,17 @@ export class HomeComponent implements AfterViewInit {
     },
   ]);
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.startSlideShow();
   }
 
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
   private startSlideShow(): void {
-    setInterval(() => {
-      let currentIndex = this.currentSlideIndex();
-      currentIndex = (currentIndex + 1) % this.slides().length;
-      this.currentSlideIndex.set(currentIndex);
-    }, 5000); // Change slide every 5 seconds
+    this.intervalId = setInterval(() => this.currentSlideIndex.update(currentIndex => (currentIndex + 1) % this.slides().length), 5000);
   }
 }
