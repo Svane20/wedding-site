@@ -1,0 +1,150 @@
+.story-section {
+  padding: 80px 0;
+
+  .story-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      top: 0;
+      background-color: #cccccc;
+    }
+  }
+
+  .story-item {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-child(odd) {
+      .story-text {
+        padding: 0 60px 0 15px;
+        text-align: right;
+      }
+
+      .story-img {
+        padding: 0 15px 0 60px;
+      }
+    }
+
+    &:nth-child(even) {
+      .story-text {
+        padding: 0 15px 0 60px;
+      }
+
+      .story-img {
+        padding: 0 60px 0 15px;
+      }
+    }
+
+    fa-icon.fa-heart {
+      position: absolute;
+      left: 50%;
+      margin-left: -15px;
+      top: 5px;
+      width: 31px;
+      text-align: center;
+      color: #3e99f4;
+      padding: 5px;
+      font-size: 18px;
+    }
+
+    .story-text,
+    .story-img {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    .story-img img {
+      width: 100%;
+    }
+
+    .story-text {
+      h3 {
+        font-size: 24px;
+        margin: 0 0 8px;
+        color: #3e99f4;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+
+      span.date {
+        font-size: 15px;
+        font-weight: 700;
+        color: #555555;
+        margin: 0 0 15px;
+        display: block;
+        text-transform: capitalize;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 26px;
+        margin: 0;
+        color: #555555;
+      }
+    }
+  }
+}
+
+@media (max-width: 859px) {
+  .story-section {
+    .story-img {
+      margin-top: 20px;
+    }
+
+    .story-content {
+      &:before {
+        left: 20px;
+      }
+    }
+
+    .story-item {
+      fa-icon.fa-heart {
+        margin-left: 0;
+        left: 5px;
+      }
+
+      .story-text,
+      .story-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      &:nth-child(odd) {
+        .story-text {
+          padding: 0 15px 0 50px;
+          text-align: left;
+        }
+      }
+
+      &:nth-child(even) {
+        .story-img {
+          padding: 0 15px 0 50px;
+        }
+
+        .story-text,
+        .story-img {
+          padding: 0 15px 0 50px;
+        }
+      }
+    }
+  }
+}

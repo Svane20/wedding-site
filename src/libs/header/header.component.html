@@ -1,4 +1,4 @@
-<header class="header" [ngClass]="{ 'fixed': isFixed() }">
+<header class="header" [ngClass]="{ fixed: isFixed() }">
   <div class="container">
     <div class="row align-items-center justify-content-between">
       <div class="logo">
@@ -7,7 +7,7 @@
       <div class="hamburger-btn" (click)="toggleNav()">
         <span></span>
       </div>
-      <div class="nav" [ngClass]="{ 'open': isNavOpen() }">
+      <div class="nav" [ngClass]="{ open: isNavOpen() }">
         <ul>
           <li>
             <a [routerLink]="['/']" fragment="home" [class.active]="isActive('home')" (click)="closeNavOnLinkClick()">Hjem</a>
@@ -16,7 +16,7 @@
             <a [routerLink]="['/']" fragment="couple" [class.active]="isActive('couple')" (click)="closeNavOnLinkClick()">Parret</a>
           </li>
           <li>
-            <a [routerLink]="['/']" (click)="closeNavOnLinkClick()">Historien</a>
+            <a [routerLink]="['/']" fragment="story" [class.active]="isActive('story')" (click)="closeNavOnLinkClick()">Historien</a>
           </li>
           <li>
             <a [routerLink]="['/']" (click)="closeNavOnLinkClick()">Program</a>

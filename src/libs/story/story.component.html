@@ -1,0 +1,30 @@
+<section class="story-section" id="story">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2>Vores Kærlighedshistorie</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="story-content">
+        <div class="row">
+          @for (story of stories(); track story.id; let i = $index) {
+            <div class="story-item">
+              <fa-icon [icon]="faHeart" class="fa-heart"></fa-icon>
+              <div class="story-text">
+                <h3>{{ story.title }}</h3>
+                <span class="date">{{ story.date | date: 'longDate' }}</span>
+                <p>
+                  {{ story.content }}
+                </p>
+              </div>
+              <div class="story-img">
+                <img [src]="story.imageUrl" alt="couple lover story" />
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
