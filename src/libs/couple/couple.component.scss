@@ -59,21 +59,23 @@
 }
 
 @media (max-width: 859px) {
-  .couple-section .couple {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 0 15px;
-  }
+  .couple-section {
+    .couple {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0 15px;
 
-  .couple-section .couple:nth-child(2) {
-    margin-top: 50px;
-  }
+      &:nth-child(2) {
+        margin-top: 50px;
 
-  .couple-section .couple:nth-child(2):before {
-    content: none;
-  }
+        &:before {
+          content: none;
+        }
+      }
 
-  .couple-section .couple fa-icon.fa-heart {
-    display: none;
+      fa-icon.fa-heart {
+        display: none;
+      }
+    }
   }
 }
