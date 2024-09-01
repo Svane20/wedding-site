@@ -19,7 +19,7 @@
             <a [routerLink]="['/']" fragment="story" [class.active]="isActive('story')" (click)="closeNavOnLinkClick()">Historien</a>
           </li>
           <li>
-            <a [routerLink]="['/']" (click)="closeNavOnLinkClick()">Program</a>
+            <a [routerLink]="['/']" fragment="event" [class.active]="isActive('event')" (click)="closeNavOnLinkClick()">Program</a>
           </li>
           <li>
             <a [routerLink]="['/']" (click)="closeNavOnLinkClick()">Toast Master</a>

@@ -1,0 +1,30 @@
+<section class="event-section" id="event">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2>Fejr vores kærlighed</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      @for (event of events(); track event.id) {
+        <div class="event-item">
+          <div class="event-item-inner">
+            <h3>{{ event.title }}</h3>
+
+            @if (event?.endDate) {
+              <span class="date">{{ event.date | date: 'd MMMM, y' }}</span> -
+              <span class="date">{{ event?.endDate | date: 'd MMMM, y' }}</span>
+            } @else {
+              <span class="date">{{ event.date | date: 'd MMMM, y' }}</span>
+            }
+
+            <span class="time">{{ event.time }}</span>
+            <p>{{ event.locationTitle }}</p>
+            <p>{{ event.location }}</p>
+            <img src="assets/images/icons/flower.svg" alt="event" />
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

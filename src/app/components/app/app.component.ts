@@ -3,12 +3,13 @@ import { HeaderComponent } from '../../../libs/header/header.component';
 import { HomeComponent } from '../../../libs/home/home.component';
 import { CoupleComponent } from '../../../libs/couple/couple.component';
 import { AudioPlayerComponent } from '../../../libs/audio-player/audio-player.component';
-import {StoryComponent} from "../../../libs/story/story.component";
+import { StoryComponent } from '../../../libs/story/story.component';
+import { EventComponent } from '../../../libs/event/event.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, HomeComponent, CoupleComponent, AudioPlayerComponent, StoryComponent],
+  imports: [HeaderComponent, HomeComponent, CoupleComponent, AudioPlayerComponent, StoryComponent, EventComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
