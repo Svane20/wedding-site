@@ -127,3 +127,17 @@
     }
   }
 }
+
+@media (max-width: 574px) {
+  .home-section {
+    .home-content h1 {
+      font-size: 40px;
+    }
+
+    .slide {
+      &:before {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
