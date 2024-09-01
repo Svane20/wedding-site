@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, signal } from '@angular/core';
 import { DatePipe, NgClass, NgStyle } from '@angular/common';
 
-export interface Slide {
+interface Slide {
   id: number;
   title: string;
   subTitle: string;
