@@ -28,7 +28,7 @@
             <a [routerLink]="['/']" (click)="closeNavOnLinkClick()">Galleri</a>
           </li>
           <li>
-            <a [routerLink]="['/']" (click)="closeNavOnLinkClick()">Tilmeld</a>
+            <a [routerLink]="['/']" fragment="response" [class.active]="isActive('response')" (click)="closeNavOnLinkClick()">S.U.</a>
           </li>
         </ul>
       </div>

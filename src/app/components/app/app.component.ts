@@ -7,6 +7,7 @@ import { StoryComponent } from '../../../libs/story/story.component';
 import { EventComponent } from '../../../libs/event/event.component';
 import { FooterComponent } from '../../../libs/footer/footer.component';
 import { PeopleComponent } from '../../../libs/people/people.component';
+import { ResponseComponent } from '../../../libs/response/response.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import { PeopleComponent } from '../../../libs/people/people.component';
     EventComponent,
     FooterComponent,
     PeopleComponent,
+    ResponseComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
