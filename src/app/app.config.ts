@@ -6,7 +6,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { registerLocaleData } from '@angular/common';
 import localeDa from '@angular/common/locales/da';
 
-// Register the Danish locale data
 registerLocaleData(localeDa);
 
 export const appConfig: ApplicationConfig = {
@@ -19,6 +18,6 @@ export const appConfig: ApplicationConfig = {
       }),
     ),
     provideAnimationsAsync(),
-    { provide: LOCALE_ID, useValue: 'da-DK' }, // Set the locale to Danish
+    { provide: LOCALE_ID, useValue: 'da-DK' },
   ],
 };
