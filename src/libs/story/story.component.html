@@ -13,7 +13,7 @@
               <fa-icon [icon]="faHeart" class="fa-heart"></fa-icon>
               <div class="story-text">
                 <h3>{{ story.title }}</h3>
-                <span class="date">{{ story.date | date: 'longDate' }}</span>
+                <span class="date">{{ story.date | date: 'd MMMM, y' }}</span>
                 <p>
                   {{ story.content }}
                 </p>
