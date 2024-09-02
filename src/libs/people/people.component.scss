@@ -37,7 +37,6 @@
         color: #555555;
         font-size: 16px;
         margin: 0 0 10px;
-        text-transform: capitalize;
       }
 
       .social-links {
@@ -85,6 +84,7 @@
     .people-item {
       flex: 0 0 100%;
       max-width: 100%;
+      border-color: #ffffff;
     }
   }
 }
