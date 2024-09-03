@@ -25,7 +25,7 @@
             <a [routerLink]="['/']" fragment="people" [class.active]="isActive('people')" (click)="closeNavOnLinkClick()">Toast Master</a>
           </li>
           <li>
-            <a [routerLink]="['/']" (click)="closeNavOnLinkClick()">Galleri</a>
+            <a [routerLink]="['/']" fragment="gallery" [class.active]="isActive('gallery')" (click)="closeNavOnLinkClick()">Galleri</a>
           </li>
           <li>
             <a [routerLink]="['/']" fragment="response" [class.active]="isActive('response')" (click)="closeNavOnLinkClick()">S.U.</a>

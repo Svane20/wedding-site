@@ -1,0 +1,136 @@
+.gallery-section {
+  padding: 80px 0 80px;
+
+  .gallery-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 15px;
+  }
+
+  .gallery-item-inner {
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      transform: scale(1.1);
+      transition: all 0.5s ease;
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.gallery-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1099;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.open {
+    display: flex;
+  }
+
+  .gp-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding: 40px 0;
+  }
+
+  .gp-container {
+    position: relative;
+    cursor: auto;
+  }
+
+  .gp-counter {
+    display: block;
+    height: 40px;
+    color: #ffffff;
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 40px;
+    font-weight: bold;
+  }
+
+  .gp-close {
+    display: block;
+    height: 40px;
+    width: 40px;
+    color: #ffffff;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    line-height: 38px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .gp-controls {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .prev,
+    .next {
+      display: inline-block;
+      margin: 0 10px;
+
+      fa-icon {
+        color: #ffffff;
+        font-size: 20px;
+        display: block;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+        border-radius: 2px;
+        transition: all 0.5s ease;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .gallery-section {
+    .gallery-item {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  .gallery-popup {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 574px) {
+  .gallery-section {
+    .gallery-item {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
