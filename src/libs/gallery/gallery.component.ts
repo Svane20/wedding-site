@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, HostListener, signal } from '@angular/core';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { animate, style, transition, trigger } from '@angular/animations';
@@ -7,6 +7,12 @@ interface GalleryItem {
   id: number;
   thumbUrl: string;
   largeUrl: string;
+}
+
+enum KeyboardKey {
+  ArrowLeft = 'ArrowLeft',
+  ArrowRight = 'ArrowRight',
+  Escape = 'Escape',
 }
 
 @Component({
@@ -23,6 +29,28 @@ interface GalleryItem {
   ],
 })
 export class GalleryComponent {
+  @HostListener('window:keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if (!this.isPopupOpen()) {
+      return;
+    }
+
+    if (event.key === KeyboardKey.ArrowLeft) {
+      this.prevSlide();
+      return;
+    }
+
+    if (event.key === KeyboardKey.ArrowRight) {
+      this.nextSlide();
+      return;
+    }
+
+    if (event.key === KeyboardKey.Escape) {
+      this.closePopup(event);
+      return;
+    }
+  }
+
   protected readonly faChevronLeft = faChevronLeft;
   protected readonly faChevronRight = faChevronRight;
 
@@ -85,7 +113,7 @@ export class GalleryComponent {
     this.isPopupOpen.set(true);
   }
 
-  public closePopup(event: MouseEvent): void {
+  public closePopup(event: Event): void {
     event.stopPropagation();
 
     this.isPopupOpen.set(false);
