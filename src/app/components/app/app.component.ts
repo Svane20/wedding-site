@@ -8,7 +8,7 @@ import { EventComponent } from '../../../libs/event/event.component';
 import { FooterComponent } from '../../../libs/footer/footer.component';
 import { PeopleComponent } from '../../../libs/people/people.component';
 import { ResponseComponent } from '../../../libs/response/response.component';
-import {GalleryComponent} from "../../../libs/gallery/gallery.component";
+import { GalleryComponent } from '../../../libs/gallery/gallery.component';
 
 @Component({
   selector: 'app-root',
