@@ -6,23 +6,17 @@
       </div>
     </div>
     <div class="row">
-      <div class="couple">
-        <img src="assets/images/couple/groom.jpg" alt="happy couple" />
-        <h3>Kasper Svane</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </div>
-      <div class="couple">
-        <fa-icon [icon]="faHeart" class="fa-heart"></fa-icon>
-        <img src="assets/images/couple/bride.jpg" alt="happy couple" />
-        <h3>Mette Nørgaard Jensen</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </div>
+      @for (couple of couples(); track couple.id; let first = $first) {
+        <div class="couple">
+          @if (!first) {
+            <fa-icon [icon]="faHeart" class="fa-heart"></fa-icon>
+          }
+
+          <img [src]="couple.imageUrl" alt="happy couple" />
+          <h3>{{ couple.name }}</h3>
+          <p>{{ couple.description }}</p>
+        </div>
+      }
     </div>
   </div>
 </section>
