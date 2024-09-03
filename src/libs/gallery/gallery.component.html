@@ -1,0 +1,39 @@
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2>Vores Minder</h2>
+      </div>
+    </div>
+    <div class="row">
+      @for (item of items(); track item.id; let i = $index) {
+        <div class="gallery-item" (click)="openPopup(i)">
+          <div class="gallery-item-inner">
+            <img [src]="item.thumbUrl" alt="couple gallery" />
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Popup -->
+@if (isPopupOpen()) {
+  <div class="gallery-popup" (click)="closePopup($event)">
+    <div class="gp-container" (click)="$event.stopPropagation()">
+      <div class="gp-counter">{{ currentItemIndex() + 1 }}/{{ items().length }}</div>
+      <div class="gp-close" (click)="closePopup($event)">&times;</div>
+      @if (!isTransitioning()) {
+        <img @fadeAnimation class="gp-img" [src]="currentItem().largeUrl" alt="" [style.max-height.px]="windowHeight()" />
+      }
+      <div class="gp-controls">
+        <div class="prev">
+          <fa-icon (click)="prevSlide()" [icon]="faChevronLeft"></fa-icon>
+        </div>
+        <div class="next">
+          <fa-icon (click)="nextSlide()" [icon]="faChevronRight"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+}
