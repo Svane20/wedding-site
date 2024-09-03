@@ -37,6 +37,41 @@ export class GalleryComponent {
       thumbUrl: 'assets/images/gallery/thumb/2.jpg',
       largeUrl: 'assets/images/gallery/large/2.jpg',
     },
+    {
+      id: 3,
+      thumbUrl: 'assets/images/gallery/thumb/3.jpg',
+      largeUrl: 'assets/images/gallery/large/3.jpg',
+    },
+    {
+      id: 4,
+      thumbUrl: 'assets/images/gallery/thumb/4.jpg',
+      largeUrl: 'assets/images/gallery/large/4.jpg',
+    },
+    {
+      id: 5,
+      thumbUrl: 'assets/images/gallery/thumb/5.jpg',
+      largeUrl: 'assets/images/gallery/large/5.jpg',
+    },
+    {
+      id: 6,
+      thumbUrl: 'assets/images/gallery/thumb/6.jpg',
+      largeUrl: 'assets/images/gallery/large/6.jpg',
+    },
+    {
+      id: 7,
+      thumbUrl: 'assets/images/gallery/thumb/7.jpg',
+      largeUrl: 'assets/images/gallery/large/7.jpg',
+    },
+    {
+      id: 8,
+      thumbUrl: 'assets/images/gallery/thumb/8.jpg',
+      largeUrl: 'assets/images/gallery/large/8.jpg',
+    },
+    {
+      id: 9,
+      thumbUrl: 'assets/images/gallery/thumb/9.jpg',
+      largeUrl: 'assets/images/gallery/large/9.jpg',
+    },
   ]);
   public currentItemIndex = signal(0);
   public currentItem = computed(() => this.items()[this.currentItemIndex()]);
