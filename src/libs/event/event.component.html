@@ -20,7 +20,9 @@
 
             <span class="time">{{ event.time }}</span>
             <p>{{ event.locationTitle }}</p>
-            <p>{{ event.location }}</p>
+            <p>
+              <a [href]="event.locationUrl" target="_blank">{{ event.location }}</a>
+            </p>
             <img src="assets/images/icons/flower.svg" alt="event" />
           </div>
         </div>

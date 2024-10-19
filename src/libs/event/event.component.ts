@@ -9,6 +9,7 @@ interface Event {
   time: string;
   locationTitle: string;
   location: string;
+  locationUrl: string;
 }
 
 @Component({
@@ -25,8 +26,9 @@ export class EventComponent {
       title: 'Vielsen',
       date: new Date('9 Aug 2025'),
       time: '13:00 - 14:00',
-      locationTitle: 'Sdr. Nærå Kirke',
+      locationTitle: 'Sønder Nærå Kirke',
       location: 'Kirkevej 9, 5792 Årslev',
+      locationUrl: 'https://maps.app.goo.gl/Xi4hUQRJ3mdY8nq69',
     },
     {
       id: 2,
@@ -35,6 +37,7 @@ export class EventComponent {
       time: '15:00 - 17:15',
       locationTitle: 'Rådhussalen',
       location: 'Bystævnet 21, 5792 Årslev',
+      locationUrl: 'https://maps.app.goo.gl/BcgrXb4YGpXpvujV8',
     },
     {
       id: 3,
@@ -44,6 +47,7 @@ export class EventComponent {
       time: '17:30 - 03:00',
       locationTitle: 'Rådhussalen',
       location: 'Bystævnet 21, 5792 Årslev',
+      locationUrl: 'https://maps.app.goo.gl/BcgrXb4YGpXpvujV8',
     },
   ]);
 
